@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Андрей Браун - Веб-разработчик</title>
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
@@ -31,10 +33,9 @@
        </div>
     </div>
     
-    <br>
     <div class="about">
         <h2>Обо мне</h2>
-        <hr align="left" width="70px" size="4px" color="#d17700"> <!--временно прибил полоски к левому краю для красоты, пока весь текст не настроим через css-->
+        <hr class="orange-line" width="70px" size="6px" color="#d17700">
         <img src="img/photo1.png" alt="photo1">
         <div class="text_about">
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
@@ -43,27 +44,26 @@
         <input type="submit" value="Скачать резюме">
     </div>
     
-    <br>
     <div class="skills">
         <h2>Что я умею</h2>
-        <hr align="left" width="70px" size="4px" color="#d17700">
+        <hr class="orange-line" width="70px" size="6px" color="#d17700">
         <div class="text_skills">
-            <div class="web-design">
+            <div class="skill">
                 <img src="img/icon1.png" alt="icon1">
                 <h3>Веб-дизайн</h3>
                 <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>
             </div>
-            <div class="development">
+            <div class="skill">
                 <img src="img/icon2.png" alt="icon2">
                 <h3>Разработка</h3>
                 <p>Lorem ipsum dolor sit amet placerat facilisis mi in tempus eleifend pellentesque.</p>
             </div>
-            <div class="ceo">
+            <div class="skill">
                 <img src="img/icon3.png" alt="icon3">
                 <h3>CEO-Оптимизация</h3>
                 <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque etiam.</p>
             </div>
-            <div class="marketing">
+            <div class="skill">
                 <img src="img/icon4.png" alt="icon4">
                 <h3>Маркетинг</h3>
                 <p>Lorem ipsum dolor sit amet placerat facilisis felis mi in tempus eleifend pellentesque natoque.</p>
@@ -71,15 +71,15 @@
         </div>
     </div>
     
-    <br>
     <div class="cases">
         <div class="head_cases">
             <h2>Кейсы</h2>
-            <hr align="left" width="70px" size="4px" color="#d17700">
+            <hr class="orange-line" width="70px" size="6px" color="#d17700">
             <div class="text_cases">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed Dapibus leo nec ornare diamcoccodo nibh ante facilisis.</p>
             </div>
         </div>
+        
         <div class="project">
             <img src="img/case1.jpg" alt="Проект">
             <div class="client">
@@ -87,17 +87,16 @@
                 <p>Какая-то компания</p>
                 <h3>Website:</h3>
                 <p>http://www.somedomain.com</p>
+                <input type="submit" value="Visit live site">
             </div>
             <div class="text_project">
                 <h3>Название проекта</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit., sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
             </div>
-            <input type="submit" value="VISIT LIVE SITE">
         </div>
     </div>
     
-    <br>
-    <div class="calculation">
+    <div class="calc">
         <h2>Расчет стоимости</h2>
         <form action="#">
             <h3>Тип сайта</h3>
@@ -117,14 +116,14 @@
                 <option value="Opt4">Option4</option>
             </select>
             <h3>Адаптивность</h3>
-            <select name="list2" id="list2">
+            <select name="list3" id="list3">
                 <option value="none" hidden="">Выберите пункт...</option>
                 <option value="Opt1">Option1</option>
                 <option value="Opt2">Option2</option>
                 <option value="Opt3">Option3</option>
                 <option value="Opt4">Option4</option>
             </select>
-            <hr align="left" width="890px" size="2px" color="#d1d1d1">
+            <hr width="890px" size="4px" color="#d1d1d1">
             <p>Сроки
             <output name="time_limit">0</output>
             </p>
@@ -134,27 +133,26 @@
         </form>
     </div>
     
-    <br>
-    <div class="statistics">
+    <div class="stats">
         <h2>Немного статистики</h2>
-        <hr align="left" width="70px" size="4px" color="#d17700">
-        <div class="text_statistics">
-            <div class="clients">
+        <hr class="orange-line" width="70px" size="6px" color="#d17700">
+        <div class="text_stats">
+            <div class="stat">
                 <img src="img/icon5.png" alt="icon5">
                 <h3>120</h3>
                 <p>Счастливых клиентов</p>
             </div>
-            <div class="hours">
+            <div class="stat">
                 <img src="img/icon6.png" alt="icon6">
                 <h3>4,600</h3>
                 <p>Часов работы</p>
             </div>
-            <div class="projects">
+            <div class="stat">
                 <img src="img/icon7.png" alt="icon7">
                 <h3>340</h3>
                 <p>Проектов завершено</p>
             </div>
-            <div class="awards">
+            <div class="stat">
                 <img src="img/icon8.png" alt="icon8">
                 <h3>23</h3>
                 <p>Наград получено</p>
@@ -162,67 +160,88 @@
         </div>
     </div>
     
-    <br>
     <div class="reviews">
         <h2>Отзывы</h2>
-        <hr align="left" width="70px" size="4px" color="#d17700">
-        <img src="img/photo2.png" alt="photo2">
-        <div class="text_reviews">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at duis sed dapidus leo nec ornare diam.</p>
-            <p><b>Михаил</b>, Ген директор ПАО “Газпром”.</p>
-            <input type="radio" name="reviews" checked>
-            <input type="radio" name="reviews">
-            <input type="radio" name="reviews">
-        </div>
+        <hr class="orange-line" width="70px" size="6px" color="#d17700">
+            <ul class="slider">
+                <li>
+                    <input type="radio" id="slide1" name="slide" checked>
+                    <label for="slide1"></label>
+                    <img src="img/photo2.png" alt="photo2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at duis sed dapidus leo nec ornare diam.
+                    <br><br><br>
+                    <b>Михаил</b>, ген. директор ПАО “Газпром”.</p>
+                </li>
+                <li>
+                    <input type="radio" id="slide2" name="slide">
+                    <label for="slide2"></label>
+                    <img src="img/photo2.png" alt="photo2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius cum, accusamus. Dicta quibusdam ipsa aliquid, magni esse. Suscipit odio illum omnis quis molestias, eligendi amet.
+                    <br><br><br>
+                    <b>Дмитрий</b>, зам. директора ПАО “Газпром”.</p>
+                </li>
+                <li>
+                    <input type="radio" id="slide3" name="slide">
+                    <label for="slide3"></label>
+                    <img src="img/photo2.png" alt="photo2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio repellat dolorum tempora aut quibusdam maiores quas aspernatur, dolores. Laudantium doloremque nam, quidem eum repellat quasi.
+                    <br><br><br>
+                    <b>Александр</b>, зам. директора ПАО “Газпром”.</p>
+                </li>
+            </ul>
     </div>
     
-    <br>
     <div class="contacts">
         <h2>Мои контакты</h2>
-        <hr align="left" width="70px" size="4px" color="#d17700">
+        <hr class="orange-line" width="70px" size="6px" color="#d17700">
         <div class="text_contacts">
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leo nec ornare diamcoccodo.</p>
         </div>
         <div class="links">
-            <div class="address">
+            <div class="link">
                 <img src="img/icon9.png" alt="icon9">
                 <p>Санкт-Петербург<br>Невский проспект 11</p>
             </div>
-            <div class="email">
+            <div class="link">
                 <img src="img/icon10.png" alt="icon10">
-                <p>info@companyname.com</p>
+                <a href="mailto:info@companyname.com"><p>info@companyname.com</p></a>
             </div>
-            <div class="tel">
+            <div class="link">
                 <img src="img/icon11.png" alt="icon11">
-                <p>+7 999 999-99-99</p>
+                <a href="tel:+79999999999"><p>+7 999 999-99-99</p></a>
             </div>
         </div>
         <div class="message">
             <h3>Оставьте мне сообщение</h3>
             <form action="#">
-                <input type="text" name="name_input" value="" placeholder="Имя">
-                <input type="text" name="email_input" value="" placeholder="Email">
-                <input type="textarea" name="message_input" value="" placeholder="Сообщение">
-                <input type="submit" value="Отправить">
+                <input type="text" class="user_input" name="name" value="" placeholder="Имя">
+                <input type="text" class="user_input" name="email" value="" placeholder="Email">
+                <br>
+                <textarea class="msg_area" name="message" value="" placeholder="Сообщение"></textarea>
+                <br>
+                <input type="submit" class="send" value="Отправить">
             </form>
         </div>
         <br>
-        <img src="img/icon12.png" alt="icon12">
-        <img src="img/icon13.png" alt="icon13">
-        <img src="img/icon14.png" alt="icon14">
-        <img src="img/icon15.png" alt="icon15">
-        <img src="img/icon16.png" alt="icon16">
-        <img src="img/icon17.png" alt="icon17">
+        <div class="icons">
+            <a href="#"><img src="img/icon12.png" alt="icon12"></a>
+            <a href="#"><img src="img/icon13.png" alt="icon13"></a>
+            <a href="#"><img src="img/icon14.png" alt="icon14"></a>
+            <a href="#"><img src="img/icon15.png" alt="icon15"></a>
+            <a href="#"><img src="img/icon16.png" alt="icon16"></a>
+            <a href="#"><img src="img/icon17.png" alt="icon17"></a>
+        </div>
     </div>
     
-    <br>
     <div class="map">
-        <p>Здесь будет карта</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106511.22700770578!2d76.57404371425939!3d66.09341817139244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4361a9789ba0e779%3A0x7f504711bce05cd0!2z0J3QvtCy0YvQuSDQo9GA0LXQvdCz0L7QuSwg0K_QvNCw0LvQvi3QndC10L3QtdGG0LrQuNC5INCw0LLRgtC-0L3QvtC80L3Ri9C5INC-0LrRgNGD0LM!5e0!3m2!1sru!2sru!4v1631460862639!5m2!1sru!2sru" width="100%" height="350px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <a href="https://goo.gl/maps/kwdyzRwPEZY1AyGo8"><div class="here"><p>I'm here</p></div></a>
     </div>
    
-     <br>
     <footer>
+        <div class="footer">
         <p>Copyright © 2021 Андрей Браун. Design by Web</p>
+        </div>
     </footer>
 </body>
 </html>
