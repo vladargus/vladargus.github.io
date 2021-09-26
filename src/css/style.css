@@ -256,6 +256,8 @@ main{
     opacity: 0;
     transition: all 0.2s;
     transform: scale(1.0);
+}
+.ready .title_container input{
     -webkit-animation: titleshow 1.5s ease forwards;
     -o-animation: titleshow 1.5s ease forwards;
     animation: titleshow 1.5s ease forwards;
@@ -843,20 +845,24 @@ footer p{
     .title_container input{
        border: 2px solid #fff;
     }
-    .title_container h1{
-        -webkit-animation-delay: 1.5s;
-        -o-animation-delay: 1.5s;
-        animation-delay: 1.5s;
+    .title_container input:hover{
+        background: white;
+        color: #344051;
     }
-    .title_container h4{
-        -webkit-animation-delay: 2.5s;
-        -o-animation-delay: 2.5s;
-        animation-delay: 2.5s;
+    .ready .title_container h1{
+        -webkit-animation-delay: 1s;
+        -o-animation-delay: 1s;
+        animation-delay: 1s;
     }
-    .title_container input{
-        -webkit-animation-delay: 3.5s;
-        -o-animation-delay: 3.5s;
-        animation-delay: 3.5s;
+    .ready .title_container h4{
+        -webkit-animation-delay: 2s;
+        -o-animation-delay: 2s;
+        animation-delay: 2s;
+    }
+    .ready .title_container input{
+        -webkit-animation-delay: 3s;
+        -o-animation-delay: 3s;
+        animation-delay: 3s;
     }
 
     .main{
@@ -884,6 +890,7 @@ footer p{
         margin-bottom: 70px;
     }
 }
+
 @media (max-width: 575px){
     .user_input{
         flex-basis: 100%;
