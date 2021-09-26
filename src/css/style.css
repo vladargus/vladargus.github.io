@@ -831,7 +831,9 @@ footer p{
 
 
 
-
+.white-btn{
+    color: white;
+}
 .white-btn:visited{
     color: white;
 }
