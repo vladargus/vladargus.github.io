@@ -12,7 +12,13 @@ body{
     font-family: FranklinGot, sans-serif;
 }
 
-
+:target:before { 
+  display: block; 
+  content: " "; 
+  margin-top: -60px; 
+  height: 60px; 
+  visibility: hidden; 
+}
 
 .preloader {
   position: fixed;
@@ -78,7 +84,6 @@ nav{
     width: 100%;
     height: 60px;
     background: #2a3d50;
-    position: fixed;
     z-index: 90;
 }
 
@@ -111,7 +116,14 @@ nav{
     text-shadow: 0px 0px 1px #ff9100;
 }
 .logo a:active{
+    color: #ff9100;
     transform: scale(1.0);
+    text-shadow: 0px 0px 1px #ff9100;
+}
+.activeHref{
+    color: #ff9100 !important;
+    transform: scale(1.1) !important;
+    text-shadow: 0px 0px 1px #ff9100 !important;
 }
 
 .menu{
@@ -135,19 +147,19 @@ nav{
     -o-animation-delay: 1s;
     animation-delay: 1s;
 }
-.menu li:nth-child(2){
+.menu li:nth-child(3){
     animation-delay: 1.2s;
 }
-.menu li:nth-child(3){
+.menu li:nth-child(4){
     animation-delay: 1.3s;
 }
-.menu li:nth-child(4){
+.menu li:nth-child(5){
     animation-delay: 1.4s;
 }
-.menu li:nth-child(5){
+.menu li:nth-child(6){
     animation-delay: 1.5s;
 }
-.menu li:nth-child(6){
+.menu li:nth-child(7){
     animation-delay: 1.6s;
 }
 .menu li a{
@@ -166,7 +178,9 @@ nav{
     text-shadow: 0px 0px 1px #ff9100;
 }
 .menu li a:active{
+    color: #ff9100;
     transform: scale(1.0);
+    text-shadow: 0px 0px 1px #ff9100;
 }
 @keyframes coming{
     from{
@@ -192,7 +206,6 @@ nav{
         text-shadow: none;
     }
 }
-
 
 
 main{
@@ -477,7 +490,7 @@ main{
 .shadowbox{
     margin: 150px 0 32px 0;
     box-shadow: 0 0 15px #ccc;
-    padding: 38px 40px 38px 40px;
+    padding: 38px 40px;
 }
 .calc h2{
     font-size: 45px;
@@ -519,7 +532,7 @@ main{
     font-weight: bold;
     margin-top: 20px;
 }
-.calc output{
+.calc span{
     float: right;
 }
 .calc input{
@@ -571,6 +584,7 @@ main{
     font-weight: bold;
     margin-top: 35px;
     letter-spacing: -1px;
+    opacity: 0;
 }
 .text_stats p{
     color: #323e4f;
@@ -838,6 +852,147 @@ footer p{
     color: white;
 }
 
+
+
+.element_animation{
+    opacity: 0;
+}
+.element_animation.show_animation{
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+
+
+.slider{
+    position: relative;
+}
+
+.slick-arrow{
+    position: absolute;
+    top: 50%;
+    z-index: 20;
+    font-size: 0;
+    width: 50px;
+    height: 50px;
+    margin-top: -25px;
+}
+
+.slick-arrow.slick-prev{
+    left: 2%;
+    background: url(../img/arrow-prev.png) 0 0 / 100% no-repeat;
+}
+.slick-arrow.slick-next{
+    right: 2%;
+    background: url(../img/arrow-next.png) 0 0 / 100% no-repeat;
+}
+
+.popup{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s ease 0s;
+}
+.popup.open{
+    opacity: 1;
+    visibility: visible;
+}
+.popup.open .popup_content{
+    transform: translate(0px,0px);
+    opacity: 1;
+}
+.popup_content{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90%;
+    align-items: flex-end;
+    background-color: #eee;
+    justify-content: center;
+    position: relative;
+    transition: all 0.8s ease 0s;
+    transform: translate(0px,-100%);
+    opacity: 0;
+}
+.popup_close{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: -30px;
+    right: 10px;
+}
+.popup_text{
+    padding: 3%;
+    align-self: center;
+    z-index: 1;
+    text-align: center;
+}
+.popup_title{
+    color: #384354;
+    font-size: 20px;
+    font-weight: bold;
+}
+.popup_discount{
+    color: #384354;
+    font-size: 30px;
+    font-weight: bold;
+}
+.popup_text label{
+    display: block;
+    color: #384354;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 2%;
+}
+.popup_text input{
+    padding: 2% 3%;
+    width: 80%;
+    font-size: 15px;
+}
+.popup_text input:focus{
+    box-shadow: 0 0 3px grey;
+}
+.popup_text button{
+    display: block;
+    font-family: Calibri, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    margin: 4% auto;
+    background-color: #57c8be;
+    padding: 2% 10%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(1.0);
+}
+.popup_text button:hover{
+    transform: scale(1.1);
+}
+.popup_text button:active{
+    transform: scale(1.0);
+}
+
+.popup_image{
+    width: 300px;
+    margin: 3% 3% 0 0;
+}
+.popup_content img{
+    width: 100%;
+}
+
+
+
 @media (max-width: 991px){
     .title_container h1, .title_container h4, .title_container input{
        color: white; 
@@ -893,6 +1048,14 @@ footer p{
     }
 }
 
+@media (max-width: 903px){
+    .popup_content img{
+        max-width: 50%;
+        margin-left: 50%;
+        transform: translate(-50%);
+    }
+}
+
 @media (max-width: 575px){
     .user_input{
         flex-basis: 100%;
@@ -906,5 +1069,33 @@ footer p{
     }
     .text_stats p{
         font-size: 15px;
+    }
+
+    .popup_title{
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .popup_discount{
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .popup_text label{
+        font-size: 14px;
+        font-weight: bold;
+        margin-bottom: 2%;
+    }
+    .popup_text input{
+        padding: 2% 3%;
+        font-size: 14px;
+    }
+    .popup_text button{
+        font-size: 16px;
+        margin: 4% auto;
+        padding: 2% 10%;
+    }
+    .popup_content img{
+        width: 80%;
+        margin-left: 50%;
+        transform: translate(-50%);
     }
 }

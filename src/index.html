@@ -6,6 +6,8 @@
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/slick.css">
+        <link rel="stylesheet" href="css/magnific-popup.css">
         <link rel="stylesheet" href="css/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0 user-scalable=0">
     </head>
@@ -17,8 +19,8 @@
             </div>
         </div>
         <div class="wrapper">
-            <header>
-                <nav>
+            <header id="header">
+                <nav class="fixed-top">
                     <div class="container">
                         <div class="row">
                             <div class="col-xxl-2 col-lg-3 col-7">
@@ -75,14 +77,14 @@
                     </div>
                 </section>
                 
-                <section class="about">
+                <section class="about section">
                     <a name="about"></a>
                     <div class="container">
                         <div class="row justify-content-center">
                             <div class="col-8">
                                 <h2>Обо мне</h2>
                                 <hr class="orange-line" width="70px" size="6px">
-                                <img src="img/photo1.png" alt="photo1">
+                                <img class="lazyimg" src="img/photo1_lowres.png" data-src="img/photo1.png" alt="photo1">
                                 <div class="text_about">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
                                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sed dapibus leo nec ornare diam. Sed commodo nibh ante facilisis bibendum dolor feugiat at. Duis sed dapibus leo nec ornare diam commodo nibh.</p>
@@ -93,14 +95,14 @@
                     </div>
                 </section>
                 
-                <section class="skills">
+                <section class="skills section">
                     <a name="skills"></a>
                     <div class="container h-100">
                         <div class="row justify-content-center h-100">
                             <div class="col">
-                                <h2>Что я умею</h2>
+                                <h2 class="element_animation">Что я умею</h2>
                                 <hr class="orange-line" width="70px" size="6px">
-                                <div class="text_skills">
+                                <div class="text_skills element_animation">
                                     <div class="skill">
                                         <img src="img/icon1.png" alt="icon1">
                                         <h3>Веб-дизайн</h3>
@@ -127,7 +129,7 @@
                     </div>
                 </section>
                 
-                <section class="cases">
+                <section class="cases section">
                     <a name="cases"></a>
                     <div class="head_cases">
                         <div class="container">
@@ -146,8 +148,14 @@
                     <div class="project">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-11 col-sm">
-                                    <img src="img/case1.jpg" alt="Проект">
+                                <div class="col-11">
+                                    <div class="projects">
+                                        <a href="img/case1.jpg"><img src="img/case1_lowres.jpg" class="lazyimg" data-src="img/case1.jpg"></a>
+                                        <a href="img/case2.jpg"><img src="img/case2.jpg"></a>
+                                        <a href="img/case3.jpg"><img src="img/case3.jpg"></a>
+                                        <a href="img/case4.jpg"><img src="img/case4.jpg"></a>
+                                        <a href="img/case5.jpg"><img src="img/case5.jpg"></a>
+                                    </div>
                                     <div class="row">
                                         <div class="col">
                                             <div class="client">
@@ -172,7 +180,7 @@
                 </div>
             </section>
             
-            <section class="calc">
+            <section class="calc section">
                 <a name="calc"></a>
                 <div class="container">
                     <div class="row justify-content-center">
@@ -205,12 +213,12 @@
                                 </select>
                                 <hr width="890px" size="4px" color="#d1d1d1">
                                 <p>Сроки
-                                    <output name="time_limit">0</output>
+                                    <span id="time_limit">0</span>
                                 </p>
                                 <p>Стоимость
-                                    <output name="cost">0</output>
+                                    <span id="cost">0</span>
                                 </p>
-                                <input type="button" value="Оставить заявку">
+                                <input type="button" id="calc_btn" value="Оставить заявку">
                             </form>
                         </div>
                     </div>
@@ -221,28 +229,28 @@
                 <a name="stats"></a>
                 <div class="container h-100">
                     <div class="row justify-content-center h-100">
-                        <div class="col-11">
+                        <div class="col-11 stats_inner">
                             <h2>Немного статистики</h2>
                             <hr class="orange-line" width="70px" size="6px">
                             <div class="text_stats">
                                 <div class="stat">
                                     <img src="img/icon5.png" alt="icon5">
-                                    <h3>120</h3>
+                                    <h3 class="stats_number">120</h3>
                                     <p>Счастливых клиентов</p>
                                 </div>
                                 <div class="stat">
                                     <img src="img/icon6.png" alt="icon6">
-                                    <h3>4,600</h3>
+                                    <h3 class="stats_number">4,600</h3>
                                     <p>Часов работы</p>
                                 </div>
                                 <div class="stat">
                                     <img src="img/icon7.png" alt="icon7">
-                                    <h3>340</h3>
+                                    <h3 class="stats_number">340</h3>
                                     <p>Проектов завершено</p>
                                 </div>
                                 <div class="stat">
                                     <img src="img/icon8.png" alt="icon8">
-                                    <h3>23</h3>
+                                    <h3 class="stats_number">23</h3>
                                     <p>Наград получено</p>
                                 </div>
                             </div>
@@ -251,7 +259,7 @@
                 </div>
             </section>
             
-            <section class="reviews">
+            <section class="reviews section">
                 <a name="reviews"></a>
                 <div class="container">
                     <div class="row justify-content-center">
@@ -290,17 +298,17 @@
                 </div>
             </section>
             
-            <section class="contacts">
+            <section class="contacts section">
                 <a name="contacts"></a>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-8">
-                            <h2>Мои контакты</h2>
+                            <h2 class="element_animation">Мои контакты</h2>
                             <hr class="orange-line" width="70px" size="6px">
-                            <div class="text_contacts">
+                            <div class="text_contacts element_animation">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit duis sed dapibus leo nec ornare diamcoccodo.</p>
                             </div>
-                            <div class="links">
+                            <div class="links element_animation">
                                 <div class="link">
                                     <a href="https://goo.gl/maps/64CfgmoFLnHU4bo38">
                                         <img src="img/icon9.png" alt="icon9">
@@ -318,11 +326,11 @@
                                             <p>+7 999 999-99-99</p></a>
                                         </div>
                                     </div>
-                                    <div class="message">
+                                    <div class="message element_animation">
                                         <h3>Оставьте мне сообщение</h3>
                                         <form action="#">
                                             <div class="firstrow"><input type="text" class="user_input" name="name" value="" placeholder="Имя">
-                                            <input type="email" class="user_input" name="email" value="" placeholder="Email"></div>
+                                            <input type="email" class="user_input" name="email" value="" autocomplete="off" placeholder="Email"></div>
                                             <br>
                                             <div class="secondrow"><textarea class="msg_area" name="message" value="" placeholder="Сообщение"></textarea></div>
                                             <br>
@@ -330,7 +338,7 @@
                                         </form>
                                     </div>
                                     <br>
-                                    <div class="icons">
+                                    <div class="icons element_animation">
                                         <a href="#"><img src="img/icon12.png" alt="icon12"></a>
                                         <a href="#"><img src="img/icon13.png" alt="icon13"></a>
                                         <a href="#"><img src="img/icon14.png" alt="icon14"></a>
@@ -347,6 +355,19 @@
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106511.22700770578!2d76.57404371425939!3d66.09341817139244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4361a9789ba0e779%3A0x7f504711bce05cd0!2z0J3QvtCy0YvQuSDQo9GA0LXQvdCz0L7QuSwg0K_QvNCw0LvQvi3QndC10L3QtdGG0LrQuNC5INCw0LLRgtC-0L3QvtC80L3Ri9C5INC-0LrRgNGD0LM!5e0!3m2!1sru!2sru!4v1631460862639!5m2!1sru!2sru" width="100%" height="350px" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         <a href="https://goo.gl/maps/kwdyzRwPEZY1AyGo8"><div class="here"><p>I'm here</p></div></a>
                     </section>
+                    <div class="popup" id="popup">
+                        <div class="popup_content">
+                            <a href="" class="popup_close close-popup"><img src="img/close-button.png" alt=""></a>
+                            <div class="popup_text">
+                                <p class="popup_title">Мой ассистент свяжется с Вами для консультации</p>
+                                <p class="popup_discount">10% скидка на первый заказ</p>
+                                <label for="yourEmail">Введите Ваш e-mail:</label>
+                                <input type="email" placeholder="E-mail" id="yourEmail">
+                                <button class="popup_send close-popup">Отправить</button>
+                            </div>
+                            <div class="popup_image"><img src="img/assistant.png" alt=""></div>
+                        </div>
+                    </div>
                 </main>
                 <footer>
                     <p>Copyright © 2021 Андрей Браун. Design by Web</p>
@@ -364,7 +385,11 @@
             document.body.classList.add('ready');
             });
             </script>
+            <script src="js/jquery-3.6.0.min.js"></script>
+            <script src="js/jquery.spincrement.min.js"></script>
             <script src="js/bootstrap.bundle.min.js"></script>
+            <script src="js/slick.min.js"></script>
+            <script src="js/jquery.magnific-popup.min.js"></script>
             <script src="js/myScript.js"></script>
         </body>
     </html>
