@@ -55,11 +55,11 @@ $projects
     },
     callbacks: {
       open: function() {
-        var current = $projects.slick('slickCurrentSlide');
+        var current = $projects.slick('slickCurrentSlide')++;
         $projects.magnificPopup('goTo', current);
       },
       beforeClose: function() {
-        $projects.slick('slickGoTo', parseInt(this.index));
+        $projects.slick('slickGoTo', parseInt(this.index)-1);
       }
     }
 });

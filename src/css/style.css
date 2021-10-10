@@ -480,10 +480,10 @@ main{
     transform: scale(1.0);
 }
 .cases input:hover{
-    transform: scale(1.1);
+    transform: scale(0.95);
 }
 .cases input:active{
-    transform: scale(1.0);
+    transform: scale(0.9);
 }
 
 
@@ -1054,6 +1054,11 @@ footer p{
         margin-left: 50%;
         transform: translate(-50%);
     }
+}
+
+@media (max-width: 768px){
+    .slick-arrow{
+        display: none;
 }
 
 @media (max-width: 575px){
