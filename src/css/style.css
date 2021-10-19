@@ -1245,7 +1245,7 @@ footer p{
 
 @media (max-width: 768px){
     .slick-arrow{
-        display: none;
+        display: none !important;
     }
     .title_container h1{
         font-size: 50px;
