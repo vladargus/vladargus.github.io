@@ -216,18 +216,305 @@ main{
 .main{
     width: 100%;
     height: 100vh;
-    background: url(../img/guy.png) 90% 100%/auto 85% no-repeat, url(../img/bg.jpg) center/cover no-repeat;
+    background: url(../img/vladislav.png) 100% 100%/auto 85% no-repeat, url(../img/bg.jpg) center/cover no-repeat;
 }
+
+
+.email-bt {
+    background: #eb7800;
+    border: 2px solid #eb7800;
+    border-radius: 50%;
+    box-shadow: 0 8px 10px rgba(249,92,24,0.3);
+    cursor: pointer;
+    height: 50px;
+    text-align: center;
+    width: 50px;
+    position: fixed;
+    right: 2%;
+    bottom: 4%;
+    z-index: 999;
+    transition: 0.3s;
+    -webkit-animation: email-an linear 1s infinite;
+    animation: email-an linear 1s infinite;
+}
+
+.email-bt .text-call{
+    height: 50px;
+    width: 50px;        
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.email-bt .text-call span {
+    text-align: center;
+    color: #eb7800;
+    opacity: 0;
+    font-size: 0;
+    position: absolute;
+    left: 2px;
+    top: 12px;
+    line-height: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    transition: opacity .3s linear;
+}
+
+.email-bt .text-call:hover span {
+    opacity: 1;
+    font-size: 9px;
+}
+.email-bt:hover i {
+    display: none;
+}
+
+.email-bt:hover {
+    z-index: 1;
+    background: #fff;
+    transition: 0.3s;
+}
+.email-bt:hover i {
+    color: #eb7800;
+    font-size: 40px;
+    transition: 0.3s;
+}
+.email-bt i {
+    color:#fff;
+    font-size: 29px;
+    position: absolute;
+    left: 47%;
+    top: 45%;
+    transform: translate(-50%,-50%);
+    transition: 0.3s;
+    line-height: 66px;
+}
+
+.email-bt i  {
+    -webkit-animation: opsimple 3s infinite;
+    animation: opsimple 3s infinite;
+}
+
+@-webkit-keyframes email-an {
+0% {
+        box-shadow:0 8px 10px rgba(249,92,24,0.3),0 0 0 0 rgba(249,92,24,0.2),0 0 0 0 rgba(249,92,24,0.2)
+}
+40% {
+        box-shadow:0 8px 10px rgba(249,92,24,0.3),0 0 0 15px rgba(249,92,24,0.2),0 0 0 0 rgba(249,92,24,0.2)
+}
+80% {
+        box-shadow:0 8px 10px rgba(249,92,24,0.3),0 0 0 30px rgba(249,92,24,0),0 0 0 26.7px rgba(249,92,24,0.067)
+}
+100% {
+        box-shadow:0 8px 10px rgba(249,92,24,0.3),0 0 0 30px rgba(249,92,24,0),0 0 0 40px rgba(249,92,24,0.0)
+}
+}@keyframes email-an {
+0% {
+        box-shadow:0 8px 10px rgba(249,92,24,0.3),0 0 0 0 rgba(249,92,24,0.2),0 0 0 0 rgba(249,92,24,0.2)
+}
+40% {
+        box-shadow:0 8px 10px rgba(249,92,24,0.3),0 0 0 15px rgba(249,92,24,0.2),0 0 0 0 rgba(249,92,24,0.2)
+}
+80% {
+        box-shadow:0 8px 10px rgba(249,92,24,0.3),0 0 0 30px rgba(249,92,24,0),0 0 0 26.7px rgba(249,92,24,0.067)
+}
+100% {
+        box-shadow:0 8px 10px rgba(249,92,24,0.3),0 0 0 30px rgba(249,92,24,0),0 0 0 40px rgba(249,92,24,0.0)
+}
+}
+
+@keyframes opsimple {
+0% {
+    opacity: 0;
+}
+40% {
+    opacity: 1;
+}
+80% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+
+@-webkit-keyframes opsimple {
+0% {
+    opacity: 0;
+}
+40% {
+    opacity: 1;
+}
+80% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+
+
+.popform{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.8s ease 0s;
+}
+.popform.open{
+    opacity: 1;
+    visibility: visible;
+}
+.popform.open .popform_content{
+    transform: translate(0px,0px);
+    opacity: 1;
+}
+.popform_content{
+    display: flex;
+    flex-wrap: nowrap;
+    width: 90%;
+    max-width: 900px;
+    max-height: 90%;
+    align-items: flex-end;
+    background-color: #eee;
+    justify-content: center;
+    position: relative;
+    transition: all 0.8s ease 0s;
+    transform: translate(0px,-100%);
+    opacity: 0;
+}
+.popform_close{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+.popform_close img {
+    transition: all 0.05s ease 0s;
+    transform: scale(1.0);
+}
+.popform_close img:hover{
+    transform: scale(1.2);
+}
+.popform_text{
+    padding: 5%;
+    align-self: center;
+    z-index: 1;
+}
+.popform_title{
+    width: 150%;
+    color: #384354;
+    font-size: 20px;
+    font-weight: bold;
+}
+.form_label{
+    display: block;
+    color: #384354;
+    font-size: 18px;
+    font-weight: bold;
+}
+.form_input{
+    padding: 1% 2%;
+    margin: 0px 0px 5px 0px;
+    width: 100%;
+    font-size: 15px;
+    color: #384354;
+    border-radius: 3px;
+}
+.form_input:focus{
+    box-shadow: 0 0 3px grey;
+}
+.form_input:focus{
+    box-shadow: 0 0 3px grey;
+}
+.agreement{
+    display: none;
+}
+.agreement:checked + .form_checkbox::after{
+    transform: scale(1.0);
+}
+.form_checkbox{
+    color: #384354;
+    margin-top: 1%;
+    font-size: 15px;
+    width: 100%;
+    font-weight: bold;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+}
+.form_checkbox::before {
+    content: "";
+    align-self: flex-start;
+    flex: 0 0 24px;
+    height: 24px;
+    background-color: #fff;
+    border-radius: 4px;
+    margin: 0px 10px 0px 0px;
+}
+.form_checkbox::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    background-color: #57c8be;
+    border-radius: 4px;
+    transform: scale(0.0);
+    transition: all 0.2s ease 0s;
+}
+.popform_text button{
+    display: block;
+    font-family: Calibri, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #fff;
+    margin: 4% auto;
+    background-color: #57c8be;
+    padding: 2% 10%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    transform: scale(1.0);
+}
+.popform_text button:hover{
+    transform: scale(1.1);
+}
+.popform_text button:active{
+    transform: scale(1.0);
+}
+.popform_image{
+    width: 300px;
+    margin: 3% 3% 0 0;
+}
+.popform_content img{
+    width: 100%;
+}
+
+
 
 .title_container{
     float: left;
-    color: #2c384a;
     text-align: center;
     width: 100%;
     margin-top: 20%;
 }
 .title_container h1{
+    color: #2c384a;
     font-size: 72px;
+    text-shadow: 0px 0px 30px #bbb;
     font-weight: bold;
     letter-spacing: -1px;
     opacity: 0;
@@ -243,9 +530,13 @@ main{
 .title_container h4{
     margin-top: 40px;
     font-size: 22px;
-    color: #79818d;
+    text-shadow: 0 0 30px #999;
+    color: #2c384a;
     letter-spacing: -1px;
     opacity: 0;
+}
+.title_container i{
+    font-weight: bold;
 }
 .ready .title_container h4{
     -webkit-animation: titleshow 1s ease forwards;
@@ -259,9 +550,9 @@ main{
     height: 40px;
     text-align: center;
     border: 2px solid #6d7682;
-    background: none;
+    background: #344051;
+    color: white;
     border-radius: 5px;
-    color: #6d7682;
     font-size: 15px;
     padding: 0px 16px;
     margin: 50px 14px 0px 14px;
@@ -279,11 +570,12 @@ main{
     animation-delay: 4.5s;
 }
 .title_container input:hover{
-    background: #344051;
-    color: white;
+    transform: scale(1.1);
+    background: #344b6c;
+    box-shadow: 0 0 8px #555;
 }
 .title_container input:active{
-    transform: scale(0.9);
+    transform: scale(1);
 }
 @keyframes titlemove{
     from{
@@ -433,6 +725,9 @@ main{
     margin-bottom: 50px;
     letter-spacing: -1px;
 }
+.project{
+    margin-bottom: 75px;
+}
 .project img{
     width: 100%;
 }
@@ -488,7 +783,7 @@ main{
 
 
 .shadowbox{
-    margin: 150px 0 32px 0;
+    margin: 75px 0 32px 0;
     box-shadow: 0 0 15px #ccc;
     padding: 38px 40px;
 }
@@ -650,7 +945,6 @@ main{
 }
 
 
-
 .contacts{
     background: url(../img/bg4.jpg) center/cover no-repeat;
 }
@@ -767,6 +1061,7 @@ main{
     margin: 60px 0 50px 0;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 .icons a{
@@ -775,6 +1070,7 @@ main{
     text-align: center;
 }
 .icons img{
+    height: 30px;
     transition: all 0.2s;
     transform: scale(1);
 }
@@ -793,39 +1089,41 @@ main{
     position: relative;
 }
 .here{
-    width: 135px;
-    height: 48px;
+    width: 180px;
+    height: 70px;
     background-color: #fff;
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    border-radius: 10px;
     box-shadow: 0px 6px 9px #666;
 }
 .here:hover{
-    width: 150px;
-    height: 52px;
+    width: 200px;
+    height: 75px;
 }
 .here:active{
-    width: 135px;
-    height: 48px;
+    width: 180px;
+    height: 70px;
 }
 .here p{
     font-family: Arial, sans-serif;
-    font-size: 16px;
+    font-size: 17px;
     font-weight: bold;
-    text-transform: uppercase;
-    line-height: 48px;
+    color: #233249;
+    letter-spacing: 1px;
+    line-height: 70px;
     text-align: center;
 }
 .here p:hover{
-    font-size: 17px;
-    line-height: 52px;
+    font-size: 18px;
+    line-height: 75px;
 }
 .here p:active{
-    font-size: 16px;
-    line-height: 48px;
+    font-size: 17px;
+    line-height: 70px;
 }
 
 
@@ -887,109 +1185,6 @@ footer p{
     background: url(../img/arrow-next.png) 0 0 / 100% no-repeat;
 }
 
-.popup{
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    top: 0;
-    left: 0;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.8s ease 0s;
-}
-.popup.open{
-    opacity: 1;
-    visibility: visible;
-}
-.popup.open .popup_content{
-    transform: translate(0px,0px);
-    opacity: 1;
-}
-.popup_content{
-    display: flex;
-    flex-wrap: wrap;
-    width: 90%;
-    max-width: 900px;
-    max-height: 90%;
-    align-items: flex-end;
-    background-color: #eee;
-    justify-content: center;
-    position: relative;
-    transition: all 0.8s ease 0s;
-    transform: translate(0px,-100%);
-    opacity: 0;
-}
-.popup_close{
-    width: 20px;
-    height: 20px;
-    position: absolute;
-    top: -30px;
-    right: 10px;
-}
-.popup_text{
-    padding: 3%;
-    align-self: center;
-    z-index: 1;
-    text-align: center;
-}
-.popup_title{
-    color: #384354;
-    font-size: 20px;
-    font-weight: bold;
-}
-.popup_discount{
-    color: #384354;
-    font-size: 30px;
-    font-weight: bold;
-}
-.popup_text label{
-    display: block;
-    color: #384354;
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 2%;
-}
-.popup_text input{
-    padding: 2% 3%;
-    width: 80%;
-    font-size: 15px;
-}
-.popup_text input:focus{
-    box-shadow: 0 0 3px grey;
-}
-.popup_text button{
-    display: block;
-    font-family: Calibri, sans-serif;
-    font-size: 20px;
-    font-weight: bold;
-    color: #fff;
-    margin: 4% auto;
-    background-color: #57c8be;
-    padding: 2% 10%;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 0.2s;
-    transform: scale(1.0);
-}
-.popup_text button:hover{
-    transform: scale(1.1);
-}
-.popup_text button:active{
-    transform: scale(1.0);
-}
-
-.popup_image{
-    width: 300px;
-    margin: 3% 3% 0 0;
-}
-.popup_content img{
-    width: 100%;
-}
 
 
 
@@ -1048,17 +1243,15 @@ footer p{
     }
 }
 
-@media (max-width: 903px){
-    .popup_content img{
-        max-width: 50%;
-        margin-left: 50%;
-        transform: translate(-50%);
-    }
-}
-
 @media (max-width: 768px){
     .slick-arrow{
         display: none;
+    }
+    .title_container h1{
+        font-size: 50px;
+        font-weight: normal;
+        letter-spacing: -1px;
+    }    
 }
 
 @media (max-width: 575px){
@@ -1076,31 +1269,51 @@ footer p{
         font-size: 15px;
     }
 
-    .popup_title{
+    .popform_title{
         font-size: 16px;
         font-weight: bold;
     }
-    .popup_discount{
-        font-size: 20px;
-        font-weight: bold;
-    }
-    .popup_text label{
+    .form_label{
         font-size: 14px;
         font-weight: bold;
         margin-bottom: 2%;
     }
-    .popup_text input{
+    .form_input{
         padding: 2% 3%;
         font-size: 14px;
     }
-    .popup_text button{
+    .form_checkbox{
+        font-size: 14px;
+    }
+    .popform_send{
         font-size: 16px;
         margin: 4% auto;
         padding: 2% 10%;
     }
-    .popup_content img{
-        width: 80%;
-        margin-left: 50%;
-        transform: translate(-50%);
+    footer{
+        height: 60px;
+    }
+    footer p{
+        font-size: 12px;
+        line-height: 60px;
+    }
+}
+
+@media (max-width: 447px){
+    .form_input{
+        width: 169%;
+    }
+    footer{
+        height: 50px;
+    }
+    footer p{
+        font-size: 10px;
+        line-height: 50px;
+    }
+}
+
+@media (max-width: 382px){
+    .logo{
+        font-size: 20px;
     }
 }

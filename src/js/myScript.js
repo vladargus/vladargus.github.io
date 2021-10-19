@@ -2,45 +2,7 @@
 
 $(document).ready(function(){
 
-
-// Модальное окно, всплывающее по таймеру
-var lastFocus;
-
-$(".close-popup").click(function (e) {
-  popupClose('.popup');
-  e.preventDefault();
-});
-
-function popupOpen(){
-  $('.popup').addClass('open');
-  $('.popup').on('click', function(e) {
-    if (!e.target.closest('.popup_content')) {
-      popupClose(e.target.closest('.popup'));
-    }
-  });
-}
-
-function popupClose(){
-  $('.popup').removeClass('open');
-  lastFocus.focus();
-}
-
-document.addEventListener('keydown', function(e) {
-  if (e.which === 27) {
-    const popupActive = $('.popup.open');
-    popupClose(popupActive);
-  }
-});
-
-setTimeout(function() {
-  lastFocus = document.activeElement;
-  popupOpen();
-  setTimeout(function() {
-    $('#yourEmail').focus();
-  }, 500);
-}, 15000);
-
-
+new WOW().init();
 
 // Слайдер кейсов с вызовом модального окна при нажатии
 var $projects = $('.projects');
@@ -55,7 +17,7 @@ $projects
     },
     callbacks: {
       open: function() {
-        var current = $projects.slick('slickCurrentSlide')++;
+        var current = $projects.slick('slickCurrentSlide')+1;
         $projects.magnificPopup('goTo', current);
       },
       beforeClose: function() {
@@ -123,33 +85,33 @@ function onEntry2 (entry2){
 
 
 
-// Плавность скролла якорных ссылок
-$('a[href^="#"]').click(function(){
-  let valHref = $(this).attr("href");
-  $('html, body').animate({scrollTop: $(valHref).offset().top - 20 + "px"});
-});
+//Плавность скролла якорных ссылок
+// $('a[href^="#"]').click(function(){
+//   let valHref = $(this).attr("href");
+//   $('html, body').animate({scrollTop: $(valHref).offset().top - 20 + "px"});
+// });
 
 
 
 // Анимация увеличения чисел при прокрутке страницы
 var show = true;
-    var countbox = ".stats_inner";
-    $(window).on("scroll load resize", function () {
-        if (!show) return false;
-        var w_top = $(window).scrollTop();
-        var e_top = $(countbox).offset().top; 
-        var w_height = $(window).height();
-        var d_height = $(document).height();
-        var e_height = $(countbox).outerHeight();
-        if (w_top + 200 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
-            $('.stats_number').css('opacity', '1');
-            $('.stats_number').spincrement({
-                thousandSeparator: "",
-                duration: 2000
-            });
-            show = false;
-        }
-    });
+var countbox = ".stats_inner";
+$(window).on("scroll load resize", function () {
+    if (!show) return false;
+    var w_top = $(window).scrollTop();
+    var e_top = $(countbox).offset().top; 
+    var w_height = $(window).height();
+    var d_height = $(document).height();
+    var e_height = $(countbox).outerHeight();
+    if (w_top + 200 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height) {
+        $('.stats_number').css('opacity', '1');
+        $('.stats_number').spincrement({
+            thousandSeparator: "",
+            duration: 2000
+        });
+        show = false;
+    }
+});
 
 
 
@@ -233,7 +195,66 @@ calc_btn.onclick = function(){
       time_limit.innerHTML = calculator.calculate()[0] + " д.";
       cost.innerHTML = calculator.calculate()[1] + " р.";
     };
-  }
+}
 
+
+// Модальное окно с обратной связью
+$(".close-popform").click(function (e) {
+  popformClose('.popform');
+  e.preventDefault();
+});
+
+function popformOpen(){
+  $('.popform').addClass('open');
+  $('.popform').on('mousedown', function(e) {
+    if (!e.target.closest('.popform_content')) {
+      popformClose(e.target.closest('.popform'));
+    }
+  });
+}
+
+function popformClose(){
+  $('.popform').removeClass('open');
+}
+
+document.addEventListener('keydown', function(e) {
+  if (e.which === 27) {
+    const popformActive = $('.popform.open');
+    popformClose(popformActive);
+  }
+});
+
+$('.popform_link').on('click', function(e) {
+    popformOpen();
+    setTimeout(function() {
+      $('#yourName').focus();
+    }, 500);
+    e.preventDefault();
+  });
+
+
+
+$("#yourPhone").mask("+7 (999) 999-9999");
+ 
+  // if ($("#yourPhone").val() == "" || $("#yourEmail").val() == ""){
+  //   event.preventDefault();
+  //   alert("Введите данные");
+  // }
+
+$('#form').submit(function(event){
+  event.preventDefault();
+  $.ajax({
+    type: "POST",
+    url: "php/mail.php",
+    data: $(this).serialize()
+  }).done(function (){
+    $(this).find("input").val("");
+    alert("Успешно отправлено!");
+    $('#form').trigger("reset");
+  });
+  return false;
+});
 
 });
+
+
